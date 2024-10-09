@@ -1,20 +1,3 @@
-import mysql.connector
-from mysql.connector import connection
-import geopy
-from geopy import distance
-
-
-connection = mysql.connector.connect(
-        host='localhost',
-        port=3306,
-        database='airport_db',
-        user='dbuser',
-        password='password',
-        autocommit=True,
-        charset="utf8mb4",
-        collation="utf8mb4_general_ci"
-    )
-
 class Frigate:
     def __init__(self, name, range, elementalprot):
         self.name = name
