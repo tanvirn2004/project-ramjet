@@ -15,7 +15,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 # Function to calculate distance between two airports
-def calculate_distance(airport1, airport2):
+def calculate_distance(airport1, airport2):                                                                                ###Timur
     cursor.execute("SELECT Latitude, Longitude FROM Airports WHERE AirportID = %s", (airport1,))
     lat1, lon1 = cursor.fetchone()
     cursor.execute("SELECT Latitude, Longitude FROM Airports WHERE AirportID = %s", (airport2,))
@@ -34,7 +34,7 @@ def get_airport_name(airport_id):
     return cursor.fetchone()[0]
 
 # Function to buy a frigate
-def buy_frigate(concords):
+def buy_frigate(concords):                                                                               #Group
     frigates = {
         1: ("EtherBus", 300)
     }
@@ -88,7 +88,7 @@ def start_game():
         print("4. Exit")
         choice = input("Enter your choice: ")
         
-        if choice == "1":
+        if choice == "1":                             ##Tanvir  
             airport_codes = get_airport_codes()
             print("Available destinations:")
             for code, name in airport_codes.items():
@@ -102,7 +102,7 @@ def start_game():
                 print(f"Concords earned: {concords}")
 
                 # Check if the quest is completed
-                if active_quest and current_location == active_quest["location"]:
+                if active_quest and current_location == active_quest["location"]:                                                            ###Kiavash
                     print(f"Quest completed! You have met {active_quest['npc']} at {get_airport_name(active_quest['location'])}.")
                     print(f"{active_quest['npc']}: {active_quest['dialogue']}")
                     concords += active_quest["reward"]
